@@ -1,0 +1,252 @@
+body {
+    background-color: aliceblue;
+    margin: 0%;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin-top: 3%;
+
+}
+h1:hover {
+    transform: scale(1.2);
+    transition-duration: 1.5s;
+    font-weight: bolder;
+}
+p{
+    text-align: justify;
+    font-family:'Raleway', sans-serif;
+    font-size: 20px;
+    padding-left:20px;
+    padding-right: 20px;
+    letter-spacing: 1px;
+
+}
+p:hover {
+    transform: scale(1.01);
+    transition-duration: 2s;
+}
+.center {
+    text-align: center;
+}
+.column1 a, .column2 a {
+    font-family:'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    animation: color-change 3s ease infinite;
+}
+
+@keyframes color-change {
+  0% { color: royalblue; }
+  50% { color: midnightblue; }
+  100% { color:royalblue; }
+}
+
+q {
+    font-style: italic;
+}
+.shiny {
+    background-image: -webkit-linear-gradient(left, white 25%, #fde071 37.5%, #ef9671, #996a6e 62.5%, white 75%);
+    background-image: linear-gradient(90deg, white 25%, #fde071 37.5%, #ef9671, #996a6e 62.5%, white 75%);
+    background-position: right center;
+    background-size: 400% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: white;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    transition: color 200ms linear;
+  }
+  
+  .shiny:hover {
+    background-position: left center;
+    color: #ef9671;
+    transition: background-position 2000ms ease-out;
+    font-weight: bolder;
+  }
+
+.navbar{
+    overflow: hidden;
+    top: 0;
+    background-color: rgb(190, 47, 13);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    -webkit-animation: moveNav 5s; /* This applies the moveNav animation below for Safari 4.0 - 8.0 */
+    animation: moveNav 5s; /* This applies the moveNav animation for all other browsers */
+}
+
+/* moveNav animation effect for moving the nav bar in from the left of the screen */
+@keyframes moveNav {
+    from {left: -100vw;} /* The navbar is starting off screen to the left */
+    to {left: 0vw;} /* This moves the navbar into place on the screen */
+}
+.navbar a{
+    text-align: center;
+    float: left;
+    display: block;
+    font-size: 20px;
+    color: rgb(223, 218, 215);
+    padding: 14px 16px;
+    text-align: center;
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    -webkit-animation: appearText 8s; /* Animation for Safari 4.0 - 8.0 */
+    animation: appearText 8s; /* Applies the moveNavText animation for 5.75s */ 
+}
+/* moveNavText animation effect for change opacity of the navbar text */
+@keyframes appearText {
+    from {opacity: 0;} 
+    to {opacity: 1;} 
+}
+/* Screens 576px and smaller will display navbar links equally distributed */
+@media screen and (max-width: 576px) {
+    .navbar a{
+        width: 25%; /* This makes each link take up 1/4 of the navbar */
+        font-size: 12px;
+    }
+}
+.navbar a:hover {
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+}
+
+.navbar a.active {
+    background-color:rgb(194, 189, 186);
+    color: black;
+
+}
+
+.network-video {
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    min-width: 100%;
+    z-index: -1;
+}
+/* Screens that are 576px and smaller will not display the background video */
+@media screen and (max-width: 576px) {
+    .network_video {
+        display: none;
+    }
+}
+.video-text{
+    text-align: center;
+    color:rgb(223, 218, 215);
+    padding: 20px;
+    position: relative;
+    -webkit-animation: movevideoText 5s; /* This applies the moveNav animation below for Safari 4.0 - 8.0 */
+    animation: movevideoText 5s; /* This applies the moveNav animation for all other browsers */
+}
+@keyframes movevideoText {
+    from{top:-100vw;}
+    to{top:0vw;}
+}
+/***** TABLE STYLING -  this section covers the styling of the columns and rows within the table *****/
+* { /* The asterisk is a universal selector that applies this effect to all elements on the page */
+    box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
+} 
+.column1 {
+    float: left;
+    width: 50%;
+    background-color:rgb(223, 218, 215);
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+
+
+}
+/* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
+@media screen and (max-width: 576px) {
+    .column1 {
+        overflow: auto;
+    }
+}
+.column2 {
+    float: left;
+    width: 50%;
+    background-color: rgb(75,73,61);
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+
+
+}
+.column_tall{
+    padding-top: 3.5%;
+    height: 450px;
+}
+.row::after {
+	content: ""; /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
+	display: table; /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
+	clear: both; /* This clears any other elements from floating on the left or the right of an element */
+}
+img {
+    display: block;
+    border-radius: 8px;
+    max-width: 100%;
+    height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img:hover {
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+/* The @media rule is used in media queries to apply different styles for different media/types of devices */
+/* On screens 576px and smaller the images will be 100px tall and centered vertically in the column */
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+form label {
+    padding-left: 10px;
+    padding-top: 10px;
+    overflow: hidden;
+    display: block;
+}
+input[type=text] {
+    display: block;
+    width: 95%;
+    height: 40px;
+    position: relative;
+    color: grey;
+    padding: 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid lightgrey;
+    border-radius:7px;
+    resize: vertical;
+}
+input[type=text]:hover{
+    box-shadow:0 0 5px  rgb(179, 142, 222) inset;
+}
+input[type=submit] {
+
+    text-align: center;
+    color: white;
+    background-color:  rgb(75,73,61);
+    width: 100px;
+    height: 30px;
+    border: 1px solid rgb(75,73,61);
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 3px;
+    padding: 3px;
+}
+input[type=submit]:hover {
+    transform: scale(1.1);
+    transition: transform 1s;
+    box-shadow: #4d4d4d;
+}
+footer {
+    color: rgb(223, 218, 215);
+
+}
+
